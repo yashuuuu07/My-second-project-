@@ -1,0 +1,770 @@
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: ElectroMart E-commerce Custom Styles
+    Author: Your Name
+    Version: 1.0
+    Description: Custom CSS for ElectroMart E-commerce Website
+
+-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------
+    1. Global Styles
+-----------------------------------------------------------------------------------*/
+
+:root {
+    /* Color Scheme */
+    --primary-color: #007bff; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary gray */
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --white-color: #fff;
+    --black-color: #000;
+
+    /* Backgrounds */
+    --body-bg: #f8f9fa; /* Light gray background */
+    --card-bg: var(--white-color);
+    --navbar-bg: var(--white-color);
+    --footer-bg: var(--dark-color);
+
+    /* Typography */
+    --font-family-base: 'Poppins', sans-serif;
+    --heading-font-family: 'Poppins', sans-serif;
+    --font-size-base: 1rem; /* 16px */
+    --line-height-base: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 3rem;
+
+    /* Borders & Shadows */
+    --border-radius: 0.375rem; /* Bootstrap default */
+    --box-shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --box-shadow-md: 0 .5rem 1rem rgba(0,0,0,.15);
+    --box-shadow-lg: 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--dark-color);
+    background-color: var(--body-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family);
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+/* Custom Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-md);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-md);
+}
+
+.btn-outline-dark {
+    color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-md);
+}
+
+
+/* Card Shadows and Transitions */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-md);
+    transform: translateY(-3px);
+}
+
+/* Style for Indian Rupee symbol */
+.price, .fw-bold, .card-text.fw-bold {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.price .fa-rupee-sign,
+.fw-bold .fa-rupee-sign,
+.card-text.fw-bold .fa-rupee-sign {
+    margin-right: 0.1rem;
+    font-size: 0.9em; /* Adjust size if needed */
+}
+
+/* Utility to simulate darken function from Sass for JS */
+/* function darken(color, percent) {
+    var f = parseInt(color.slice(1), 16),
+        t = percent < 0 ? 0 : 255,
+        p = percent < 0 ? percent * -1 : percent,
+        R = f >> 16,
+        G = (f >> 8) & 0x00ff,
+        B = f & 0x0000ff;
+    return (
+        "#" +
+        (
+            0x1000000 +
+            (Math.round((t - R) * p) + R) * 0x10000 +
+            (Math.round((t - G) * p) + G) * 0x100 +
+            (Math.round((t - B) * p) + B)
+        )
+        .toString(16)
+        .slice(1)
+    );
+} */
+
+
+/*-----------------------------------------------------------------------------------
+    2. Header & Navigation
+-----------------------------------------------------------------------------------*/
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    padding: var(--spacing-sm) 0;
+    box-shadow: var(--box-shadow-sm);
+}
+
+.navbar-brand img {
+    height: 40px; /* Adjust as needed */
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--dark-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    background-color: var(--light-color);
+}
+
+/* Search bar custom styling */
+.navbar .input-group {
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures button corners are rounded with input */
+}
+
+.navbar .form-control {
+    border: 1px solid var(--light-color);
+    border-right: none;
+    box-shadow: none; /* Remove default focus shadow */
+    transition: all 0.3s ease;
+}
+
+.navbar .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), .25); /* Custom focus shadow */
+}
+
+.navbar .btn-outline-primary {
+    border: 1px solid var(--primary-color);
+    border-left: none;
+}
+
+/* Cart badge styling */
+.navbar .btn-outline-dark {
+    position: relative;
+    padding-right: var(--spacing-lg); /* Make space for badge */
+}
+
+.navbar .btn-outline-dark .badge {
+    position: absolute;
+    top: -5px; /* Adjust position */
+    right: -5px; /* Adjust position */
+    font-size: 0.75rem;
+    padding: 0.35em 0.6em;
+    border-radius: 50%;
+    background-color: var(--danger-color); /* Red for alerts */
+    color: var(--white-color);
+}
+
+/* Mobile menu improvements */
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hide specific elements on smaller screens if they clutter the nav */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: var(--spacing-md);
+        border-top: 1px solid var(--light-color);
+        padding-top: var(--spacing-md);
+    }
+    .navbar .d-flex.me-3 { /* Search form */
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+    .navbar .d-flex.me-3 .input-group {
+        width: 100%;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: var(--spacing-sm);
+    }
+    .navbar .btn-outline-dark {
+        margin: 0 auto;
+        display: block;
+        width: fit-content;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------
+    3. Product Grid
+-----------------------------------------------------------------------------------*/
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    overflow: hidden;
+}
+
+.product-card .card-img-top {
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.product-card .card-body {
+    padding: var(--spacing-md);
+}
+
+.product-card .card-title {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.product-card .card-text.text-muted {
+    font-size: 0.9rem;
+    min-height: 40px; /* Ensure consistent card height for description */
+}
+
+.product-card .card-text.fw-bold {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Rating stars styling (assuming Font Awesome stars) */
+.product-card .rating-stars {
+    color: #ffc107; /* Bootstrap yellow for stars */
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+/* Add to cart button effects */
+.product-card .btn-primary {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.product-card .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px) scale(1.02);
+}
+
+
+/* Responsive grid layout handled by Bootstrap's row-cols classes */
+
+
+/*-----------------------------------------------------------------------------------
+    4. Shopping Cart
+-----------------------------------------------------------------------------------*/
+
+.cart-content .card {
+    background-color: var(--white-color);
+}
+
+.cart-content .list-group-item {
+    background-color: transparent;
+    border-color: var(--light-color);
+    padding: var(--spacing-md) 0;
+}
+
+.cart-content .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.cart-content img {
+    border: 1px solid var(--light-color);
+    padding: 2px;
+}
+
+.cart-content .row .col-md-5 h5 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cart-content .row .col-md-3 p {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* Total price highlight */
+.cart-content .card.p-3 h4 {
+    border-bottom: 1px solid var(--light-color);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.cart-content .list-group-item.fw-bold {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+.cart-content .list-group-item.fw-bold span {
+    color: var(--primary-color);
+}
+
+/* Quantity controls (if implemented, example structure) */
+/* .quantity-controls {
+    display: flex;
+    align-items: center;
+}
+.quantity-controls .btn {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+}
+.quantity-controls .form-control {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+} */
+
+
+/*-----------------------------------------------------------------------------------
+    5. Forms
+-----------------------------------------------------------------------------------*/
+
+.form-label {
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--secondary-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), .25);
+}
+
+/* Validation states */
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: var(--danger-color);
+    padding-right: 2.25rem; /* Space for icon */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-valid, .form-select.is-valid {
+    border-color: var(--success-color);
+    padding-right: 2.25rem; /* Space for icon */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.1-1.4 1.1-.4l1.1 1.4L6.3.8c.4-.5 1.1-.4 1.4.1.3.5-.2 1.2-.7 1.5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkout-content .card, .contact-content .card {
+    background-color: var(--white-color);
+}
+
+/* Form layout improvements handled by Bootstrap grid (row g-3) */
+
+
+/*-----------------------------------------------------------------------------------
+    6. Pages
+-----------------------------------------------------------------------------------*/
+
+/* Hero section styling */
+.hero-banner {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 80px 0;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, rgba(0,123,255,0.8), rgba(0,50,150,0.8)), url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Amazing+Electronics+Deals'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 123, 255, 0.6); /* Overlay to darken image */
+    z-index: 1;
+}
+
+.hero-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255,255,255,0.9);
+}
+
+.hero-banner .btn-lg {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: var(--white-color);
+    border-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+.hero-banner .btn-lg:hover {
+    background-color: var(--light-color);
+    border-color: var(--light-color);
+    color: var(--primary-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--box-shadow-lg);
+}
+
+
+/* About page layout */
+.about-content h2, .contact-content h2 {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.about-content h2::after, .contact-content h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: var(--line-height-base);
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content .row .col-md-4 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-content .col-md-4 i {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Contact page design */
+.contact-content .card {
+    border: 1px solid var(--light-color);
+}
+
+.contact-content .row .col-md-4 p.fw-bold {
+    font-size: 1.1rem;
+    margin-top: var(--spacing-sm);
+    color: var(--dark-color);
+}
+
+.contact-content .row .col-md-4 p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+/* Order confirmation styling */
+.order-confirmation-content .fas {
+    font-size: 6rem;
+    color: var(--success-color);
+}
+
+.order-confirmation-content h2 {
+    font-size: 2.5rem;
+    color: var(--success-color);
+    margin-top: var(--spacing-md);
+    font-weight: 700;
+}
+
+.order-confirmation-content .lead {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--footer-bg) !important;
+    color: rgba(255,255,255,0.7);
+}
+
+footer h5 {
+    color: var(--white-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+footer .list-unstyled li {
+    margin-bottom: var(--spacing-xs);
+}
+
+footer .list-unstyled a {
+    color: rgba(255,255,255,0.7);
+    transition: color 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
+    color: var(--primary-color);
+}
+
+footer .fab {
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .fab:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+footer .text-muted {
+    font-size: 0.9rem;
+}
+
+
+/*-----------------------------------------------------------------------------------
+    7. Responsive Design (Mobile-First Approach)
+-----------------------------------------------------------------------------------*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    .hero-banner {
+        padding: 60px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+    .hero-banner p {
+        font-size: 1rem;
+    }
+    .hero-banner .btn-lg {
+        font-size: 1rem;
+        padding: 0.6rem 2rem;
+    }
+    .product-card .card-img-top {
+        height: 180px;
+    }
+    .product-card .card-text.fw-bold {
+        font-size: 1.1rem;
+    }
+    .about-content h2, .contact-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.85rem; }
+    .hero-banner {
+        padding: 70px 0;
+    }
+    .hero-banner h1 {
+        font-size: 3rem;
+    }
+    .hero-banner p {
+        font-size: 1.15rem;
+    }
+    .product-card .card-img-top {
+        height: 200px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-nav .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    .hero-banner {
+        padding: 90px 0;
+    }
+    .hero-banner h1 {
+        font-size: 3.25rem;
+    }
+    .product-card .card-img-top {
+        height: 180px; /* Adjust for 2-col layout */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .product-card .card-img-top {
+        height: 220px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .hero-banner {
+        padding: 100px 0;
+    }
+    .hero-banner h1 {
+        font-size: 3.5rem;
+    }
+    .product-card .card-img-top {
+        height: 250px;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------
+    8. Animations (Transitions already handled in global styles)
+-----------------------------------------------------------------------------------*/
+
+/* No specific keyframe animations requested, but hover effects are used via transitions.
+   For loading states or more complex animations, @keyframes would be used here.
+   Page transitions can be implemented with JavaScript and CSS classes. */
+
+/* Example of a simple fade-in for dynamically loaded content (requires JS) */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply this class to sections when they become visible via JavaScript */
+/* For example, in your JS:
+    function showSection(id) {
+        // ... show/hide logic ...
+        const targetSection = document.getElementById(id);
+        if (targetSection) {
+            targetSection.classList.remove('d-none');
+            targetSection.classList.add('fade-in'); // Add animation class
+        }
+    }
+*/

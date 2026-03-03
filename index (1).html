@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroMart - Your One-Stop Electronics Shop</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .hero-banner {
+            background: url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Amazing+Electronics+Deals') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .product-card {
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <img src="https://via.placeholder.com/150x40/007bff/ffffff?text=ElectroMart" alt="ElectroMart Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                    <div class="d-flex">
+                        <a href="#cart" class="btn btn-outline-dark position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0 <span class="visually-hidden">cart items</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="container mt-4">
+
+        <!-- Homepage Section -->
+        <section id="home" class="homepage-content">
+            <!-- Hero Banner -->
+            <div class="p-5 mb-4 bg-light rounded-3 hero-banner text-center">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Discover Your Next Gadget!</h1>
+                    <p class="col-md-8 fs-4 mx-auto">Shop the latest electronics at unbeatable prices.</p>
+                    <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
+                </div>
+            </div>
+            
+            <!-- Featured Products -->
+            <h2 class="text-center my-5">Featured Products</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+                <div class="col">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="https://via.placeholder.com/400x300/f8f9fa/212529?text=Product+1" class="card-img-top" alt="Product 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Laptop Pro X</h5>
+                            <p class="card-text text-muted">Powerful and sleek laptop.</p>
+                            <p class="card-text fw-bold">₹85,999</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="https://via.placeholder.com/400x300/f8f9fa/212529?text=Product+2" class="card-img-top" alt="Product 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Smartwatch Ultra</h5>
+                            <p class="card-text text-muted">Stay connected on the go.</p>
+                            <p class="card-text fw-bold">₹12,499</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="https://via.placeholder.com/400x300/f8f9fa/212529?text=Product+3" class="card-img-top" alt="Product 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Noise-Cancelling Headphones</h5>
+                            <p class="card-text text-muted">Immersive audio experience.</p>
+                            <p class="card-text fw-bold">₹7,999</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="https://via.placeholder.com/400x300/f8f9fa/212529?text=Product+4" class="card-img-top" alt="Product 4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Gaming Console XG</h5>
+                            <p class="card-text text-muted">Next-gen gaming power.</p>
+                            <p class="card-text fw-bold">₹49,999</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Sections -->
+            <h2 class="text-center my-5">Shop by Category</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3 shadow">
+                        <div class="card-body text-center">
+                            <h3 class="card-title"><i class="fas fa-laptop display-4 mb-3"></i><br>Laptops</h3>
+                            <p class="card-text">Powerful machines for every need.</p>
+                            <a href="#products" class="btn btn-light btn-sm">View Category</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3 shadow">
+                        <div class="card-body text-center">
+                            <h3 class="card-title"><i class="fas fa-mobile-alt display-4 mb-3"></i><br>Smartphones</h3>
+                            <p class="card-text">Stay connected, smarter.</p>
+                            <a href="#products" class="btn btn-light btn-sm">View Category</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-warning mb-3 shadow">
+                        <div class="card-body text-center">
+                            <h3 class="card-title"><i class="fas fa-headphones display-4 mb-3"></i><br>Audio</h3>
+                            <p class="card-text">Immersive sound experiences.</p>
+                            <a href="#products" class="btn btn-light btn-sm">View Category</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products" class="products-content d-none">
+            <h2 class="text-center my-4">Our Products</h2>
+            <div class="row">
+                <aside class="col-md-3">
+                    <h3>Filters</h3>
+                    <div class="card p-3 shadow-sm">
+                        <h5>Category</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filterLaptops">
+                            <label class="form-check-label" for="filterLaptops">
+                                Laptops
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filterSmartphones">
+                            <label class="form-check-label" for="filterSmartphones">
+                                Smartphones
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filterAudio">
+                            <label class="form-check-label" for="filterAudio">
+                                Audio
+                            </label>
+                        </div>
+                        <hr>
+                        <h5>Price Range</h5>
+                        <input type="range" class="form-range" min="0" max="100000" step="1000" id="priceRange">
+                        <div class="d-flex justify-content-between">
+                            <span>₹0</span>
+                            <span>₹1,00,000+</span>
+                        </div>
+                        <button class="btn btn-primary mt-3 w-100">Apply Filters</button>
+                    </div>
+                </aside>
+                <div class="col-md-9">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Example Product Card (dynamically load more) -->
+                        <div class="col">
+                            <div class="card h-100 shadow-sm product-card">
+                                <img src="https://via.placeholder.com/400x300/e9ecef/212529?text=Product+5" class="card-img-top" alt="Product 5">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Ultra HD Monitor</h5>
+                                    <p class="card-text text-muted">Crystal clear visuals.</p>
+                                    <p class="card-text fw-bold">₹22,999</p>
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm product-card">
+                                <img src="https://via.placeholder.com/400x300/e9ecef/212529?text=Product+6" class="card-img-top" alt="Product 6">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Wireless Mouse</h5>
+                                    <p class="card-text text-muted">Ergonomic and precise.</p>
+                                    <p class="card-text fw-bold">₹1,499</p>
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm product-card">
+                                <img src="https://via.placeholder.com/400x300/e9ecef/212529?text=Product+7" class="card-img-top" alt="Product 7">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">External SSD 1TB</h5>
+                                    <p class="card-text text-muted">Fast and portable storage.</p>
+                                    <p class="card-text fw-bold">₹8,999</p>
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="cart-content d-none">
+            <h2 class="text-center my-4">Your Shopping Cart</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://via.placeholder.com/100x100/f8f9fa/212529?text=Product+1" class="img-fluid rounded" alt="Product 1">
+                                </div>
+                                <div class="col-md-5">
+                                    <h5 class="mb-0">Laptop Pro X</h5>
+                                    <small class="text-muted">Quantity: 1</small>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <p class="fw-bold mb-0">₹85,999</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://via.placeholder.com/100x100/f8f9fa/212529?text=Product+2" class="img-fluid rounded" alt="Product 2">
+                                </div>
+                                <div class="col-md-5">
+                                    <h5 class="mb-0">Smartwatch Ultra</h5>
+                                    <small class="text-muted">Quantity: 1</small>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <p class="fw-bold mb-0">₹12,499</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm p-3">
+                        <h4>Cart Summary</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Subtotal
+                                <span>₹98,498</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Shipping
+                                <span>₹0 (Free)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+                                Total
+                                <span>₹98,498</span>
+                            </li>
+                        </ul>
+                        <a href="#checkout" class="btn btn-success btn-lg mt-3 w-100">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Form -->
+        <section id="checkout" class="checkout-content d-none">
+            <h2 class="text-center my-4">Checkout</h2>
+            <div class="card p-4 shadow-sm">
+                <form>
+                    <h4 class="mb-3">Customer Information</h4>
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        </div>
+                        <div class="col-12">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+91 XXXXXXXXXX" required>
+                        </div>
+                    </div>
+
+                    <!-- Address Form -->
+                    <section id="address-form">
+                        <h4 class="mb-3">Shipping address</h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                            </div>
+                            <div class="col-md-5">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" required>
+                                    <option value="">Choose...</option>
+                                    <option>India</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="">Choose...</option>
+                                    <option>Maharashtra</option>
+                                    <option>Delhi</option>
+                                    <!-- Add more states -->
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="same-address">
+                            <label class="form-check-label" for="same-address">Billing address is the same as my shipping address</label>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="save-info">
+                            <label class="form-check-label" for="save-info">Save this information for next time</label>
+                        </div>
+                    </section>
+
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="paypal">UPI / NetBanking</label>
+                        </div>
+                    </div>
+                    <div class="row gy-3">
+                        <div class="col-md-6">
+                            <label for="cc-name" class="form-label">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <small class="text-muted">Full name as displayed on card</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cc-number" class="form-label">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="cc-expiration" class="form-label">Expiration</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="cc-cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Place Order</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Order Confirmation -->
+        <section id="order-confirmation" class="order-confirmation-content text-center d-none py-5">
+            <i class="fas fa-check-circle text-success display-1 mb-3"></i>
+            <h2>Thank You for Your Order!</h2>
+            <p class="lead">Your order #EM-12345 has been successfully placed.</p>
+            <p>You will receive an email confirmation shortly with details of your purchase.</p>
+            <a href="#home" class="btn btn-primary mt-3">Continue Shopping</a>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="about-content d-none py-5">
+            <h2 class="text-center mb-4">About ElectroMart</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="lead text-center">
+                        Welcome to ElectroMart, your premier destination for the latest and greatest in consumer electronics.
+                        Established in 2023, we are committed to bringing cutting-edge technology directly to your doorstep.
+                    </p>
+                    <p>
+                        At ElectroMart, we believe in empowering our customers with access to a vast array of high-quality products,
+                        from powerful laptops and smartphones to immersive audio devices and smart home solutions. Our carefully
+                        curated selection ensures that you find exactly what you're looking for, whether you're a tech enthusiast,
+                        a professional, or simply looking for the perfect gadget.
+                    </p>
+                    <p>
+                        Our mission is to provide an unparalleled shopping experience through competitive pricing,
+                        exceptional customer service, and fast, reliable delivery across India. We are constantly
+                        updating our inventory to reflect the newest trends and innovations in the electronics world.
+                    </p>
+                    <p>
+                        Thank you for choosing ElectroMart. We look forward to serving all your electronic needs!
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center mt-5">
+                <div class="col-md-4">
+                    <i class="fas fa-gem display-4 text-primary mb-3"></i>
+                    <h3>Quality Products</h3>
+                    <p>We source only the best products from trusted brands.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-headset display-4 text-success mb-3"></i>
+                    <h3>Excellent Support</h3>
+                    <p>Our dedicated team is here to assist you 24/7.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-shipping-fast display-4 text-warning mb-3"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Enjoy quick and reliable shipping right to your home.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="contact-content d-none py-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center lead">Have a question or need assistance? Reach out to us!</p>
+                    <div class="card p-4 shadow-sm mb-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
+                            <p class="fw-bold">Our Location</p>
+                            <p>123 Tech Avenue, Silicon City, India</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-envelope fa-2x text-success mb-2"></i>
+                            <p class="fw-bold">Email Us</p>
+                            <p><a href="mailto:info@electromart.com">info@electromart.com</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-phone-alt fa-2x text-warning mb-2"></i>
+                            <p class="fw-bold">Call Us</p>
+                            <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>ElectroMart</h5>
+                    <p class="text-muted">Your ultimate destination for all things electronics. Shop smart, live better.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#products" class="text-white text-decoration-none">Products</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Ave, Silicon City</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@electromart.com</li>
+                        <li><i class="fas fa-phone-alt me-2"></i> +91 12345 67890</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="mt-3 border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2023 ElectroMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Simple client-side routing for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            function showSection(id) {
+                sections.forEach(section => {
+                    if (section.id === id) {
+                        section.classList.remove('d-none');
+                    } else {
+                        section.classList.add('d-none');
+                    }
+                });
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // Initial load
+            const initialHash = window.location.hash.substring(1) || 'home';
+            showSection(initialHash);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+                    history.pushState(null, null, '#' + targetId); // Update URL hash
+                });
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('hashchange', function() {
+                const newHash = window.location.hash.substring(1) || 'home';
+                showSection(newHash);
+            });
+        });
+    </script>
+</body>
+</html>
